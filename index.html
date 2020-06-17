@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Loan Calculator</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+
+    <script defer src="js/app.js"></script>
+  </head>
+  <body>
+    <header class="header"></header>
+    <main>
+      <h1>Loan Calculator</h1>
+      <section id="calculate-section">
+        <form id="calculate-form" action="javascript:void(0)">
+          <p>
+            <label for="cedi">
+              <input type="text" value="₵" id="cedi" class="label" />
+            </label>
+            <label for="loanAmount">
+              <input
+                type="text"
+                placeholder="Loan Amount"
+                id="loanAmount"
+                name="loan amount"
+                class="input"
+              />
+            </label>
+          </p>
+
+          <p>
+            <label for="percent">
+              <input type="text" id="percent" value="%" class="label" />
+            </label>
+
+            <label for="interestRate">
+              <input
+                type="text"
+                placeholder="Interest Rate"
+                id="interestRate"
+                name="Interest Rate"
+                class="input"
+              />
+            </label>
+          </p>
+
+          <p>
+            <label for="term">
+              <input
+                type="text"
+                placeholder="Term(years)"
+                id="term"
+                name="Term"
+              />
+            </label>
+          </p>
+
+          <div class="main-btn">
+            <input
+              type="button"
+              class="btn"
+              name="calculate"
+              value="Calculate"
+              onclick="calX()"
+            />
+          </div>
+        </form>
+
+        <h3>Results</h3>
+
+        <p>Total Interest: <span id="totalInterest"></span></p>
+        <p>Total Payments: <span id="totalPayments"></span></p>
+
+        <p>Monthly Payments: <span id="monthlyPayments"></span></p>
+      </section>
+
+      <section id="qualify-section">
+        <h2>Check if you qualify</h2>
+        <p>
+          Per our policy, we award loans only to workers and individuals who
+          earn monthly incomes of amounts twice the expected monthly payments or
+          more.
+        </p>
+
+        <form id="qualify-form" action="javascript:void(0)">
+          <label for="cedi">
+            <input type="text" value="₵" id="cedi" class="label" />
+          </label>
+          <label for="income">
+            <input
+              type="text"
+              id="income"
+              placeholder="Monthly income"
+              name="income"
+              class="input"
+            />
+          </label>
+
+          <div class="main-btn">
+            <input
+              type="button"
+              value="Click Here"
+              class="btn"
+              onclick="qualifyCheck()"
+            />
+          </div>
+        </form>
+
+        <p>Message: <span id="result"></span></p>
+      </section>
+    </main>
+  </body>
+</html>
